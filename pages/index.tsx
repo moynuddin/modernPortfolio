@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import About from "../Components/About";
+import Contacts from "../Components/Contacts";
 import Experience from "../Components/Experience";
 import Hero from "../Components/Hero";
 import NavBar from "../Components/NavBar";
+import Skills from "../Components/Skills";
 
 export default function Home() {
   return (
@@ -24,6 +26,12 @@ export default function Home() {
       </section>
       <section id="experience" className="snap-center">
         <Experience />
+      </section>
+      <section id="skill" className="snap-center">
+        <Skills />
+      </section>
+      <section className="snap-center">
+        <Contacts />
       </section>
     </div>
   );

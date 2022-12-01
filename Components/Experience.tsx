@@ -36,10 +36,10 @@ const Experience = (props: Props) => {
       transition={{ duration: 1 }}
       className="h-screen flex relative  flex-col text-left md:flex-row max-w-full px-10 justify-center mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
         Experience
       </h3>
-      <div className="flex space-x-5 w-full overflow-x-scroll mt-[100px]">
+      <div className="flex space-x-5 w-full overflow-x-scroll mt-[100px] lg:mt-[120px]">
         {/* <ScrollMenu LeftArrow={leftArrow} RightArrow={rightArrow}> */}
         <Card />
         <Card />

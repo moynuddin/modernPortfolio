@@ -4,7 +4,7 @@ type Props = {};
 
 const Card = (props: Props) => {
   return (
-    <div className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[350px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10">
+    <div className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[285px] md:w-[400px] xl:w-[500px] snap-center bg-[#292929] p-10">
       <motion.img
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
