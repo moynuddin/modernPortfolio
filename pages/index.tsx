@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import About from "../Components/About";
@@ -6,8 +7,31 @@ import Experience from "../Components/Experience";
 import Hero from "../Components/Hero";
 import NavBar from "../Components/NavBar";
 import Skills from "../Components/Skills";
+import Projects from "../Components/Projects";
+import { WorkExperience, PageInfo, Project, Skill, Social } from "../typings";
+import {
+  getSocialData,
+  getSkillsData,
+  getPageInfoData,
+  getExperienceData,
+  getProjectsData,
+} from "../utils/fetch";
 
-export default function Home() {
+type Props = {
+  pageInfo: PageInfo[];
+  experiences: WorkExperience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+};
+
+export default function Home({
+  socials,
+  skills,
+  pageInfo,
+  experiences,
+  projects,
+}: Props) {
   return (
     <div className="bg-teal-900 h-screen snap-y snap-mandatory overflow-scroll overflow-x-hidden z-0">
       <Head>
@@ -16,23 +40,43 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar />
+      <NavBar social={socials} />
 
       <section id="hero" className="snap-center">
         <Hero />
       </section>
       <section id="about" className="snap-start">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
       <section id="experience" className="snap-center">
-        <Experience />
+        <Experience experience={experiences} />
       </section>
       <section id="skills" className="snap-center">
-        <Skills />
+        <Skills skill={skills} />
       </section>
-      <section className="snap-center">
+      <section id="projects" className="snap-center">
+        <Projects project={projects} />
+      </section>
+      <section id="contacts" className="snap-center">
         <Contacts />
       </section>
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const socials: Social[] = await getSocialData();
+  const skills: Skill[] = await getSkillsData();
+  const pageInfo: PageInfo[] = await getPageInfoData();
+  const experiences: WorkExperience[] = await getExperienceData();
+  const projects: Project[] = await getProjectsData();
+  return {
+    props: {
+      socials,
+      skills,
+      pageInfo,
+      experiences,
+      projects,
+    },
+  };
+};

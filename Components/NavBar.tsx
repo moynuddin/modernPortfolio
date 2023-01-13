@@ -1,14 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  AiFillLinkedin,
-  AiFillGithub,
-  AiTwotoneMail,
-  AiFillInstagram,
-} from "react-icons/ai";
-type Props = {};
+import { AiTwotoneMail } from "react-icons/ai";
+import Image from "next/image";
+import Link from "next/link";
 
-const NavBar = (props: Props) => {
+import { Social } from "../typings";
+import { urlFor } from "../sanity";
+type Props = {
+  socials: Social[];
+};
+
+const NavBar = (socials: Props) => {
   return (
     <header className="sticky top-0 flex flex-start justify-between p-5 max-w-5xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -27,9 +29,19 @@ const NavBar = (props: Props) => {
         }}
         className="flex flex-row gap-3"
       >
-        <AiFillLinkedin className="h-[30px] w-[30px] cursor-pointer" />
-        <AiFillGithub className="h-[30px] w-[30px] cursor-pointer" />
-        <AiFillInstagram className="h-[30px] w-[30px] cursor-pointer" />
+        {socials.social.map((s: any) => (
+          <Link href={s?.url} target="_blank" key={s._id}>
+            <Image
+              key={s._id}
+              src={urlFor(s.image).url()}
+              alt="HTML Skill"
+              className="w-7 h-7"
+              width={30}
+              height={30}
+              title={s?.title}
+            />
+          </Link>
+        ))}
       </motion.div>
       <motion.div
         initial={{
@@ -47,8 +59,13 @@ const NavBar = (props: Props) => {
         }}
         className="flex flex-row items-center gap-2 cursor-pointer"
       >
-        <AiTwotoneMail className="h-[30px] w-[30px] " />
-        <p className="md:inline-flex capitalize lg:text-2xl">Get in touch</p>
+        <AiTwotoneMail className="h-[30px] w-[30px]" title="Mail" />
+        <Link
+          href="#contacts"
+          className="hidden md:inline-flex capitalize lg:text-2xl"
+        >
+          Get in touch
+        </Link>
       </motion.div>
     </header>
   );

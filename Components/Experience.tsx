@@ -3,9 +3,13 @@ import { motion } from "framer-motion";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Card from "./Card";
-type Props = {};
+import { WorkExperience } from "../typings";
+type Props = {
+  experiences: WorkExperience[];
+};
 
-const Experience = (props: Props) => {
+const Experience = (experiences: Props) => {
+  // console.log(experiences.experience);
   const leftArrow = () => {
     const { isFirstItemVisible, scrollPrev } =
       React.useContext(VisibilityContext);
@@ -40,12 +44,9 @@ const Experience = (props: Props) => {
         Experience
       </h3>
       <div className="flex space-x-5 w-full overflow-x-scroll mt-[100px] lg:mt-[120px]">
-        {/* <ScrollMenu LeftArrow={leftArrow} RightArrow={rightArrow}> */}
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        {/* </ScrollMenu> */}
+        {experiences?.experience.map((data) => (
+          <Card experiences={data} key={data?._id} />
+        ))}
       </div>
     </motion.div>
   );
