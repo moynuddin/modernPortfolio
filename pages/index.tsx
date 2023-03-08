@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import About from "../Components/About";
 import Contacts from "../Components/Contacts";
-import Experience from "../Components/Experience";
+// import Experience from "../Components/Experience";
 import Hero from "../Components/Hero";
 import NavBar from "../Components/NavBar";
 import Skills from "../Components/Skills";
@@ -16,6 +16,7 @@ import {
   getExperienceData,
   getProjectsData,
 } from "../utils/fetch";
+import TimeLine from "../Components/TimeLine";
 
 type Props = {
   pageInfo: PageInfo[];
@@ -43,13 +44,13 @@ export default function Home({
       <NavBar social={socials} />
 
       <section id="hero" className="snap-center">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-start">
         <About pageInfo={pageInfo} />
       </section>
       <section id="experience" className="snap-center">
-        <Experience experience={experiences} />
+        <TimeLine experience={experiences} />
       </section>
       <section id="skills" className="snap-center">
         <Skills skill={skills} />

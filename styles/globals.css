@@ -6,4 +6,12 @@
     .heroButton{
         @apply px-6 py-2 border border-transparent rounded-full text-sm tracking-widest text-green-500 transition-all hover:border-[#f7abba]/40 hover:text-[#f7abba]/40
     }
+
+    .right:nth-child(odd){
+      justify-content: flex-end;
+    }
+    .left:nth-child(even){
+      justify-content: flex-start;
+    }
+  
 }

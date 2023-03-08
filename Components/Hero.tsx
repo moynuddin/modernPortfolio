@@ -1,21 +1,23 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
+import { PageInfo } from "../typings";
 import Circles from "./Circles";
-type Props = {};
+import { urlFor } from "../sanity";
+type Props = {
+  pageInfo: PageInfo[];
+};
 
-const Hero = (props: Props) => {
-  // const [text] = useTypewriter({
-  //   words: ["Hi The name is Moin", "Love to code"],
-  //   loop: true,
-  //   delaySpeed: 2000,
-  // });
+const Hero = ({ pageInfo }: Props) => {
   return (
     <div className="flex flex-col space-y-8 h-screen justify-center items-center overflow-hidden text-center">
       <Circles />
-      <img
+      <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src={urlFor(pageInfo[0]?.heroImage).url()}
+        width={200}
+        height={200}
         alt="photo"
       />
       <div className="z-20">
