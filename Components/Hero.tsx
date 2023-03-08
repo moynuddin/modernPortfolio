@@ -15,7 +15,7 @@ const Hero = ({ pageInfo }: Props) => {
       <Circles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src={urlFor(pageInfo[0]?.heroImage).url()}
+        src={urlFor(pageInfo[0]?.profilePic).url()}
         width={200}
         height={200}
         alt="photo"

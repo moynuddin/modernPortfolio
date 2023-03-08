@@ -5,7 +5,8 @@ import { PageInfo } from "../../typings";
 
 const query = groq`*[_type=='pageInfo']{
   backgroundInformation,
-  heroImage
+  heroImage,
+  profilePic
 }`;
 
 type Data = {
