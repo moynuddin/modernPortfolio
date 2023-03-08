@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { Skill } from "../typings";
 import { urlFor } from "../sanity";
 
@@ -46,7 +46,7 @@ const Skills = (skills: any) => {
           {skills?.skill
             ?.sort((a: any, b: any) => b.progress - a.progress)
             .map((s: any) => (
-              <Tilt className="Tilt" options={{ max: 25 }} key={s._id}>
+              <Tilt className="Tilt" key={s._id}>
                 <motion.div className="Tilt item" variants={item}>
                   <Image
                     src={urlFor(s?.image).url()}
