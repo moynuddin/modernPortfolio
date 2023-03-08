@@ -10,7 +10,7 @@ type Props = {
   socials: Social[];
 };
 
-const NavBar = (socials: Props) => {
+const NavBar = (socials: any) => {
   return (
     <header className="sticky top-0 flex flex-start justify-between p-5 max-w-5xl mx-auto z-20 xl:items-center">
       <motion.div

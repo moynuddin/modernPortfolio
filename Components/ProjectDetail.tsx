@@ -4,7 +4,7 @@ import { urlFor } from "../sanity";
 import { FaLink } from "react-icons/fa";
 type Props = {};
 
-const ProjectDetail = (projects: Props) => {
+const ProjectDetail = (projects: any) => {
   return (
     <div className="flex flex-col space-y-4 md:flex-row md:space-x-10 md:space-y-0 relative">
       {projects?.projects?.map((d: any) => (

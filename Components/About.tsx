@@ -35,7 +35,7 @@ const About = (pageInfo: Props) => {
       />
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-3xl font-semibold text-gray-500 lg:text-3xl">
-          Here's a little background
+          Here is a little background
         </h4>
         <p className="text-justify text-sm text-zinc-200 xl:text-2xl">
           {pageInfo.pageInfo[0].backgroundInformation}

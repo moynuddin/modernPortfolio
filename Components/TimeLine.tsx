@@ -10,7 +10,7 @@ type Props = {
   experiences: WorkExperience[];
 };
 
-const TimeLine = (experiences: Props) => {
+const TimeLine = (experiences: any) => {
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -30,7 +30,7 @@ const TimeLine = (experiences: Props) => {
       opacity: 1,
     },
   };
-  const modifyDate = (data) => {
+  const modifyDate = (data: any) => {
     let date = new Date(data).toDateString().split(" ").splice(1).join(" ");
     return date;
   };

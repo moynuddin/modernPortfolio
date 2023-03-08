@@ -9,7 +9,7 @@ type Props = {
   skills: Skill[];
 };
 
-const Skills = (skills: Props) => {
+const Skills = (skills: any) => {
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -44,8 +44,8 @@ const Skills = (skills: Props) => {
           className="container grid grid-cols-3 gap-3 justify-items-end space-x-5 mb-5 lg:space-x-10 lg:mb-12"
         >
           {skills?.skill
-            ?.sort((a, b) => b.progress - a.progress)
-            .map((s) => (
+            ?.sort((a: any, b: any) => b.progress - a.progress)
+            .map((s: any) => (
               <Tilt className="Tilt" options={{ max: 25 }} key={s._id}>
                 <motion.div className="Tilt item" variants={item}>
                   <Image
