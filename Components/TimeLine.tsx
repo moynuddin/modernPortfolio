@@ -63,7 +63,7 @@ const TimeLine = (experiences: any) => {
         <div className="relative text-gray-700 antialiased text-sm font-semibold">
           <div className="hidden sm:block w-1 bg-gray-500 absolute h-full left-1/2 transform -translate-x-1/2"></div>
 
-          {experiences?.experience.map((data) => (
+          {experiences?.experience.map((data: any) => (
             <div key={data._id}>
               <div className="mt-6 sm:mt-0 sm:mb-12">
                 <div className="flex flex-col sm:flex-row items-center">
