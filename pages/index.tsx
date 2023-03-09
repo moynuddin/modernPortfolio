@@ -1,9 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import About from "../Components/About";
 import Contacts from "../Components/Contacts";
-// import Experience from "../Components/Experience";
 import Hero from "../Components/Hero";
 import NavBar from "../Components/NavBar";
 import Skills from "../Components/Skills";
