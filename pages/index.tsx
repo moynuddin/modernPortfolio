@@ -64,15 +64,15 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const socials: Social[] = await getSocialData();
   const skills: Skill[] = await getSkillsData();
+  const socials: Social[] = await getSocialData();
   const pageInfo: PageInfo[] = await getPageInfoData();
   const experiences: WorkExperience[] = await getExperienceData();
   const projects: Project[] = await getProjectsData();
   return {
     props: {
-      socials,
       skills,
+      socials,
       pageInfo,
       experiences,
       projects,
