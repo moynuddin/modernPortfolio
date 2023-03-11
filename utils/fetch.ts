@@ -1,7 +1,7 @@
 import { Skill, Social } from "../typings";
 
 export const getSocialData = async () => {
-  const res = await fetch("https://192.168.1.6:3000/api/getSocials");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`);
 
   const data = await res.json();
 
