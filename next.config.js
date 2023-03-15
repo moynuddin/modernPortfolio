@@ -5,9 +5,6 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io", "pbs.twimg.com"],
   },
-  experimental: {
-    nftTracing: true,
-  },
 };
 
 module.exports = nextConfig;
