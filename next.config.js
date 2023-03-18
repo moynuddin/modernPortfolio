@@ -4,7 +4,6 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["cdn.sanity.io", "pbs.twimg.com"],
-    unstable_staticImage: true,
   },
 };
 
