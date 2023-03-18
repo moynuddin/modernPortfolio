@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io", "pbs.twimg.com"],
   },
+  unstable_staticImage: true,
 };
 
 module.exports = nextConfig;
